@@ -11,14 +11,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>spring-boot</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>demo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <name>Demo Application</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>

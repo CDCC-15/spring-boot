@@ -1,5 +1,6 @@
 package org.example.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
@@ -10,7 +11,7 @@ import java.util.Set;
 public class Employee extends ModelBase {
     private String firstName;
     private String lastName;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee", cascade = CascadeType.REMOVE)
     private Set<Contract> contracts;
 
     public String getFirstName() {

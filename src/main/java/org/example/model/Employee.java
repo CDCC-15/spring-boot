@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToMany;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -12,7 +13,7 @@ public class Employee extends ModelBase {
     private String firstName;
     private String lastName;
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "employee", cascade = CascadeType.REMOVE)
-    private Set<Contract> contracts;
+    private Set<Contract> contracts = new HashSet<>();
 
     public String getFirstName() {
         return firstName;

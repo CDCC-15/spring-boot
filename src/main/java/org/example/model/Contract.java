@@ -1,10 +1,9 @@
 package org.example.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.OneToOne;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 public class Contract extends ModelBase {
@@ -12,8 +11,8 @@ public class Contract extends ModelBase {
     private Employee employee;
     @OneToOne(optional = false)
     private Position position;
-    private Date initDate;
-    private Date endDate;
+    private LocalDate initDate;
+    private LocalDate endDate;
 
     public Position getPosition() {
         return position;
@@ -23,19 +22,19 @@ public class Contract extends ModelBase {
         this.position = position;
     }
 
-    public Date getInitDate() {
+    public LocalDate getInitDate() {
         return initDate;
     }
 
-    public void setInitDate(Date initDate) {
+    public void setInitDate(LocalDate initDate) {
         this.initDate = initDate;
     }
 
-    public Date getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 

@@ -5,7 +5,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -15,14 +15,14 @@ public class ModelBase {
     private Long id;
 
     @CreatedDate
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(nullable = false, updatable = false)
-    private Date createdOn;
+    private LocalDate createdOn;
 
     @LastModifiedDate
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
     @Column(insertable = false)
-    private Date updatedOn;
+    private LocalDate updatedOn;
 
     @Version
     @Column(nullable = false)
@@ -36,19 +36,19 @@ public class ModelBase {
         this.id = id;
     }
 
-    public Date getCreatedOn() {
+    public LocalDate getCreatedOn() {
         return createdOn;
     }
 
-    public void setCreatedOn(Date createdOn) {
+    public void setCreatedOn(LocalDate createdOn) {
         this.createdOn = createdOn;
     }
 
-    public Date getUpdatedOn() {
+    public LocalDate getUpdatedOn() {
         return updatedOn;
     }
 
-    public void setUpdatedOn(Date updatedOn) {
+    public void setUpdatedOn(LocalDate updatedOn) {
         this.updatedOn = updatedOn;
     }
 
